@@ -20,7 +20,7 @@ class Test:
         self.headers = ''
     
     def getObjectIDs(self):
-        cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=seaeb-hwdvsql;DATABASE=DevProcessing;trusted_connection=yes')
+        cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=#######;DATABASE=######trusted_connection=yes')
         cnxn.autocommit = True
         cursor=cnxn.cursor()
 
