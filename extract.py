@@ -31,7 +31,7 @@ class Extract:
         return sql
 
     def execute_sql(self):
-        cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=seaeb-hwdvsql;DATABASE=DevProcessing;trusted_connection=yes')
+        cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=#####;DATABASE=#######;trusted_connection=yes')
         cnxn.autocommit = True
         cursor=cnxn.cursor()
 
@@ -41,7 +41,7 @@ class Extract:
         cnxn.close()
 
     def current_details(self):
-        cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=seaeb-hwdvsql;DATABASE=DevProcessing;trusted_connection=yes')
+        cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=#####;DATABASE=######;trusted_connection=yes')
         df_currgen = pd.read_sql('select * from p_TestAutomation order by ParticipantID', cnxn)
         s = StringIO()
         df_currgen.to_csv(s, sep="|", index=False)
@@ -66,7 +66,7 @@ class Extract:
         return str(new_id)
         
     def saveToSQL_Directory(self, mongoObjectid):
-        cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=seaeb-hwdvsql;DATABASE=DevProcessing;trusted_connection=yes')
+        cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=######;DATABASE=########;trusted_connection=yes')
         cnxn.autocommit = True
         cursor=cnxn.cursor()
 
